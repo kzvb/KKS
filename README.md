@@ -12,15 +12,20 @@ Die [Tinyheb Software](https://github.com/tinyheb/tinyheb/wiki/Zertifikatsbehand
 
 Die Ordnerstruktur:
 * Eigene_Daten
-Dort ist das Zertifikat in verschiedenen Formen abgespeichert (pem, der) und andere Konfigurationsdateien untergebracht
+
+   Dort ist das Zertifikat in verschiedenen Formen abgespeichert (pem, der) und andere Konfigurationsdateien untergebracht
 * Libs
-hier sind augelagerte Codeteile
+
+   hier sind augelagerte Codeteile
 * Logs
-Hier werden die Logdateien für den Verschlüsselungsvorgang und Dateitransfer abgelegt
+
+   Hier werden die Logdateien für den Verschlüsselungsvorgang und Dateitransfer abgelegt
 * tmp
-temporäres Verzeichnis
+
+   temporäres Verzeichnis
 * Zertifikate
-Dort werden [die Zertifikate](https://trustcenter-data.itsg.de/dale/gesamt-pkcs.key) der ITSG gespeichert. Jedes Zertifikat wird aus der Gesamtdatei extrahiert und abgespeichert als <IKnummer>.pem
+
+   Dort werden [die Zertifikate](https://trustcenter-data.itsg.de/dale/gesamt-pkcs.key) der ITSG gespeichert. Jedes Zertifikat wird aus der Gesamtdatei extrahiert und abgespeichert als <IKnummer>.pem
 
 Der Ablauf ist folgender:
 1. Update der Zertifikate. Dieses wird in einem ramfs gemacht, da viel I/O stattfindet
@@ -28,7 +33,7 @@ Der Ablauf ist folgender:
 3. Versenden der Dateien
 
 Der Aufruf des Skriptes gibt folgende Hilfe von sich:
-[hostname:benutzer]/home/verzeichnis $ ./versendeDateien.sh
+```[hostname:benutzer]/home/verzeichnis $ ./versendeDateien.sh
 Aufruf: ./versendeDateien.sh <Parameter>
 mögliche Parameter:
         - update
@@ -59,5 +64,5 @@ mögliche Parameter:
                 Beispiel: ./versendeDateien.sh check /home/verzeichnis/tmp/Z119561G.AUF
         - schreibe <Auftragsdatei> <Wert> <Bezeichner>
                 Beispiel: ./versendeDateien.sh schreibe /home/verzeichnis/tmp/Z119561G.AUF beispiel.csv DATEI_BEZEICHNUNG
-
+```
 Für den Rest studiert man wohl am Besten den Code. Das sollte zumindest genügend Anreize liefern können eine eigene Lösung basteln zu können.
